@@ -1,26 +1,17 @@
-#include"linklist.h"
+#include"link.h"
 int main()
 {
-	link* phead = newlist(-1);
-	phead->next = newlist(2); printlist(phead);
-	printf("\n");
-	buynode(phead,1,3);//按下标插入
-	buynode(phead,2,4);//按下标插入
-	buynode(phead,1,6);//按下标插入
-	buynode(phead,1,5);//按下标插入
-	buynode(phead,1,13);//按下标插入
-	buynode(phead,1,33);//按下标插入
-	printlist(phead); printf("\n");
-	int n = amountnode(phead);//计算有效节点的个数
-	printf("%d\n", n);
-	/*printf("%p\n", phead);
-	printf("%p\n", &phead);
-	printf("%p\n", &(phead->next));*/
-	link* cur1 = findnodebynum(phead, 2);
-	printf("%d\n", cur1->num);
-	link* cur2 = findnode(phead, 3);
-		printf("%d\n",cur2->num);
-		deletenode(phead, 3);
-		printlist(phead);
+	link* h1 = newcode(2);
+	h1->next = newcode(4);
+	link* h2 = newcode(3);
+	h2->next = newcode(5);
+	link* head = x(h1, h2);
+	link* cur = head;
+	
+	while (cur) {
+		printf("%d->", cur->num);
+		cur = cur->next;
+	}
+	printf("NULL");
 	return 0;
 }
